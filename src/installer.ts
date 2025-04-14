@@ -215,10 +215,7 @@ async function cacheWindowsDir(
     `Created link ${defaultToolCacheCompleteFile} => ${actualToolCacheCompleteFile}`
   );
 
-  // make outer code to continue using toolcache as if it were installed on c:
-  // restore toolcache root to default drive c:
-  process.env['RUNNER_TOOL_CACHE'] = defaultToolCacheRoot;
-  return defaultToolCacheDir;
+  return actualToolCacheRoot;
 }
 
 async function addExecutablesToToolCache(
